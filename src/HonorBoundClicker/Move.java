@@ -16,9 +16,17 @@ public class Move {
 	 int endy = 700;		//700
 	
 	
-	  
-    public void NW() throws Exception {
+
+	 
+    public void MoveClick(int x, int y) throws Exception {
     
+    	HB.mouser.move(x, y);
+    	HB.mouser.click();
+    	TimeUnit.SECONDS.sleep(7);   
+    }
+    
+    public void NW() throws Exception {
+        
     	HB.mouser.move(west, north);
     	HB.mouser.click();
     	TimeUnit.SECONDS.sleep(7);   

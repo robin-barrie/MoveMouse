@@ -4,6 +4,7 @@ import java.awt.AWTException;
 import java.util.concurrent.TimeUnit;
 
 import HonorBoundClicker.HB;
+import HonorBoundClicker.TakePic;
 
 public class COR {
 	
@@ -170,10 +171,21 @@ public class COR {
 	
 	 public void run() throws Exception {
 		 
-		
-		   HB.move.NW();
-		   HB.move.autoAttack();
-		    
+		 TakePic.Full();
+		 HB.table.start("NW");
+		 TimeUnit.SECONDS.sleep(10);
+		 HB.table.read();
+		 HB.table.stop();
+		 	HB.move.MoveClick(HB.table.x,HB.table.y);
+		 TakePic.Full();
+		 HB.table.start("AutoAttack");
+		 TimeUnit.SECONDS.sleep(10);
+		 HB.table.read();
+		 HB.table.stop();
+			HB.move.MoveClick(HB.table.x,HB.table.y);
+
+		  	TimeUnit.SECONDS.sleep(100);
+			
 		   HB.move.NW();
 		   HB.move.autoAttack();
 		   

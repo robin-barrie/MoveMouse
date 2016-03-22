@@ -1,10 +1,7 @@
 <grip:Pipeline>
   <sources>
     <grip:ImageFile>
-      <property name="path" value="C:\Users\Robin\Pictures\sample images\BGR.png"/>
-    </grip:ImageFile>
-    <grip:ImageFile>
-      <property name="path" value="C:\Users\Robin\workspace\ScreenCapture\NW.jpg"/>
+      <property name="path" value="C:\Users\Robin\Documents\GitHub\MoveMouse\FullScreenshot.jpg"/>
     </grip:ImageFile>
   </sources>
   <steps>
@@ -67,7 +64,7 @@
         <value>0.0</value>
       </grip:Input>
       <grip:Input step="2" socket="9">
-        <value>5.5555555E7</value>
+        <value>5555555.0</value>
       </grip:Input>
       <grip:Input step="2" socket="10">
         <value>0.0</value>
@@ -104,20 +101,20 @@
   </steps>
   <connections>
     <grip:Connection>
-      <grip:Output step="1" socket="0" previewed="false"/>
-      <grip:Input step="2" socket="0"/>
+      <grip:Output step="0" socket="0" previewed="false"/>
+      <grip:Input step="1" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output step="2" socket="0" previewed="true"/>
       <grip:Input step="3" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output step="0" socket="0" previewed="false"/>
-      <grip:Input step="1" socket="0"/>
+      <grip:Output source="0" socket="0" previewed="false"/>
+      <grip:Input step="0" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output source="1" socket="0" previewed="false"/>
-      <grip:Input step="0" socket="0"/>
+      <grip:Output step="1" socket="0" previewed="false"/>
+      <grip:Input step="2" socket="0"/>
     </grip:Connection>
   </connections>
   <settings>

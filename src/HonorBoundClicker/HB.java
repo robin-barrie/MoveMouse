@@ -33,6 +33,7 @@ import edu.wpi.first.wpilibj.networktables.NetworkTable;
 **/
 
 
+
 import Maps.COR;
 import Maps.GuildAssault;
 
@@ -67,12 +68,22 @@ public class HB {
     	
     	
     	// INIT ...................................
+    	TimeUnit.SECONDS.sleep(5);
     	   TakePic.Full();
     		TimeUnit.SECONDS.sleep(5);
     	table.setup();
     	TimeUnit.SECONDS.sleep(5);
     	
     	// PROGRAM STARTS HERE.....................
+    	HB.table.start("NWArrow");
+		 TimeUnit.SECONDS.sleep(10);
+		 HB.table.read();
+		 HB.table.stop();
+		 	HB.move.MoveClick(HB.table.x,HB.table.y);
+    	TimeUnit.SECONDS.sleep(50);
+    	
+    	
+    	HB.cor.run();
     	
     	
     	TakePic.Full();
