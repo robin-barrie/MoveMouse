@@ -13,8 +13,7 @@ public class NWTables {
 	public  double xcenter, ycenter;
 	public int x, y;
 	public Process proc;
-	//public zeroArray;
-	
+		
 
 	
 	
@@ -23,8 +22,8 @@ public class NWTables {
 		gripTables.setIPAddress("192.168.1.100");	
 		gripTables = NetworkTable.getTable("GRIP/myContoursReport");
 		
-		NetworkTable.globalDeleteAll();
-		gripTables.clearPersistent("area");
+		
+		
 		
 		System.out.println("table setup");
 		
@@ -39,7 +38,7 @@ public class NWTables {
 		//String command[] = {grip,"--headless", fileLocation};
 		String command[] = {grip, fileLocation};
 		System.out.println("opening GRIP");
-		//double[] defaultValue = new double[0];
+		
 		
 		
 		double[] defaultValue = new double[0];
@@ -120,16 +119,18 @@ public class NWTables {
 			
 		   
 		try {
-			gripTables.putBoolean("run", false);
+			gripTables.putBoolean("run", true);
 			System.out.println("GRIP stopped");
 			TimeUnit.SECONDS.sleep(5);
-			gripTables.putBoolean("run", false);
+			gripTables.putBoolean("run", true);
 			System.out.println("GRIP started");
 			TimeUnit.SECONDS.sleep(5);
 	    	
 	    	double[] centerx = gripTables.getNumberArray("centerX", defaultValue);
 	    	double[] centery = gripTables.getNumberArray("centerY", defaultValue);
-	    	System.out.println("centerX: ");
+	    	System.out.println("centerX: " + centerx);
+	   
+	    	
 			for (double centerX : centerx) {
 				 xcenter = centerX;
 			}
